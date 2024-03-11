@@ -1,0 +1,12 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false #是否将自己注册到服务中心
+    fetch-registry: false  #屏蔽注册信息
+  #关闭实例保护，心跳比例低于85%，eureka会将这些实例保护起来，不会过期，如保护期间内该服务刚好下线，消费者就会拿到无效服务实例
+  server:
+    enable-self-preservation: false
