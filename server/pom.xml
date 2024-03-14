@@ -59,6 +59,7 @@
             <scope>provided</scope>
         </dependency>
 
+<!--        微服务服务依赖-->
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.cloud</groupId>-->
 <!--            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->

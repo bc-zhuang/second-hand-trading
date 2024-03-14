@@ -13,7 +13,6 @@ import java.util.Date;
 
 /**
  * @author bc
- * @create 2024-2-05
  * 消息控制器
  */
 @RestController

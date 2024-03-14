@@ -44,23 +44,20 @@ public class AddressServiceImpl implements AddressService {
     }
 
     /**
-     * 新增地址，默认地址的处理逻辑待优化
+     * 新增地址
      * @param addressModel
      * @return
      */
-    //取消使用事务，不存在并发修改一个用户的地址信息
-    //@Transactional(rollbackFor = Exception.class)
     public boolean addAddress(AddressModel addressModel){
         if(addressModel.getDefaultFlag()){
             AddressModel a=new AddressModel();
             a.setDefaultFlag(false);
             a.setUserId(addressModel.getUserId());
-            //将一个用户的所有地址改为非默认地址，需要优化，sql增加判断条件default_flag=1，减少更新记录的数目
+            //将一个用户的所有地址改为非默认地址
             addressDao.updateByUserIdSelective(a);
         }else {
             //判断是否有默认地址，若无，则将当前地址设为默认地址
             List<AddressModel> list=addressDao.getDefaultAddress(addressModel.getUserId());
-            //可优化，改为count统计，不用返回地址数据，减少io
             if(null==list||0==list.size()){
                 addressModel.setDefaultFlag(true);
             }
@@ -74,8 +71,6 @@ public class AddressServiceImpl implements AddressService {
      * @param addressModel
      * @return
      */
-    //取消使用事务，不存在并发修改一个用户的地址信息
-    //@Transactional(rollbackFor = Exception.class)
     public boolean updateAddress(AddressModel addressModel){
         if(addressModel.getDefaultFlag()){
             //同新增地址时的逻辑

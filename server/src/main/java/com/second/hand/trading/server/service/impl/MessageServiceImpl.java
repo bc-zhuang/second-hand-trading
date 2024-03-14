@@ -42,7 +42,7 @@ public class MessageServiceImpl implements MessageService {
     }
 
     /**
-     * 删除一条留言，未做用户身份验证
+     * 删除一条留言
      * @param id
      * @return
      */
@@ -60,7 +60,7 @@ public class MessageServiceImpl implements MessageService {
     }
 
     /**
-     * 获取一个用户收到的所有留言，未做分页查询
+     * 获取一个用户收到的所有留言
      * 同时查询出用户的信息和闲置的信息
      * userId建索引
      * @param userId

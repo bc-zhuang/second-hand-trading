@@ -20,7 +20,6 @@ import java.io.OutputStream;
 
 /**
  * @author bc
- * @create 2024-02-21
  * 图片控制器
  */
 @RestController

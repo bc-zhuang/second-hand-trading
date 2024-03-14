@@ -57,7 +57,7 @@ public class FavoriteServiceImpl implements FavoriteService {
 
     /**
      * 查询一个用户的所有收藏
-     * 关联查询，没有用join，通过where in查询关联的闲置信息
+     * 关联查询，通过where in查询关联的闲置信息
      * @param userId
      * @return
      */

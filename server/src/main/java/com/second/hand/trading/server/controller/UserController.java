@@ -15,7 +15,6 @@ import java.sql.Timestamp;
 
 /**
  * @author bc
- * @create 2024-01-17
  * 用户控制器
  */
 @RestController

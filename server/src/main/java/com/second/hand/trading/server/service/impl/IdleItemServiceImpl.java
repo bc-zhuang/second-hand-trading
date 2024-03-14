@@ -89,7 +89,7 @@ public class IdleItemServiceImpl implements IdleItemService {
 
     /**
      * 分类查询，分页
-     * 同时查出闲置发布者的信息，代码结构与上面的类似，可封装优化，或改为join查询
+     * 同时查出闲置发布者的信息
      * @param idleLabel
      * @param page
      * @param nums

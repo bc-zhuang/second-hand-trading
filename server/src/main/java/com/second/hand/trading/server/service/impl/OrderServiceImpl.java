@@ -36,13 +36,6 @@ public class OrderServiceImpl implements OrderService {
 
     /**
      * 新增订单，同时下架闲置
-     * 用了事务串行化，后续要优化，修改更新的sql，增加更新条件，而不是在代码中判断条件
-     * 业务逻辑可优化，改为支付时才下架。
-     * 新功能待做，需要新增订单超时处理
-     * （订单超时：
-     * 1、重新上架闲置；2、修改订单状态；
-     * 3、确保订单取消前不会影响用户的支付，支付前要判断订单状态并加读锁，取消订单时要判断订单状态为未支付才能取消；
-     * 4、保证延期任务一定执行，即确保任务不会因为系统异常而消失）
      * @param orderModel
      * @return
      */
@@ -205,6 +198,12 @@ public class OrderServiceImpl implements OrderService {
         return orderList;
     }
 
+    /**
+     * 查询所有订单并分页
+     * @param page
+     * @param nums
+     * @return
+     */
     public PageVo<OrderModel> getAllOrder(int page, int nums){
         List<OrderModel> list=orderDao.getAllOrder((page-1)*nums,nums);
         if(list.size()>0){

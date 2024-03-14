@@ -18,7 +18,6 @@ import javax.validation.constraints.NotNull;
 
 /**
  * @author bc
- * @create 2024-01-15
  * 管理员控制器
  */
 @RestController

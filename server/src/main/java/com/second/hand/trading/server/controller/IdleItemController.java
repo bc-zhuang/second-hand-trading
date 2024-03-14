@@ -13,7 +13,6 @@ import java.util.Date;
 
 /**
  * @author bc
- * @create 2024-01-25
  * 商品控制器
  */
 @RestController
